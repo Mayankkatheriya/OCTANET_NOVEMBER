@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Orbitron', sans-serif;
+    background-color: beige;
+    background: linear-gradient(102deg,#ffe581 0%, #ffe5ad 80%);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: rgb(88, 49, 0);
+}
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-decoration: dotted underline;
+    margin-bottom: 2rem;
+}
+h1::first-letter{
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+h1 span::first-letter{
+    font-weight: 700;
+    font-size: 2.5rem !important;
+}
+form{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+input{
+    padding: 4px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px dashed burlywood;
+    outline: none;
+    background-color: transparent;
+}
+
+form button {
+  align-items: center;
+  appearance: none;
+  background-color: burlywood;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#e2cb98 0 -3px 0 inset;
+  color: #36395A;
+  display: inline-flex;
+  height: 30px;
+  justify-content: center;
+  line-height: 1.02;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+form button:focus {
+  box-shadow: #ebdc99 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #e7d999 0 -3px 0 inset;
+}
+
+form button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #f1dbaa 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+form button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+input::placeholder{
+    font-size: 15px;
+    color: #927f2d;
+}
+.errorMessage{
+    margin-bottom: 1rem;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    display: none;
+}
+.scoreBoard-container{
+    width: 80%;
+    max-width: 900px;
+}
+.scoreboard{
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#e2cb98 0 -3px 0 inset;
+}
+.playerName{
+    font-weight: 700;
+}
+.main-time{
+    font-size: 12px;
+    font-weight: 600px;
+}
+.player-task{
+    font-weight: 700;
+}
+
+.scoreboard-btn-container{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.scoreboard-btn-container button{
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid brown;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#e2cb98 0 -3px 0 inset;
+    font-weight: 700;
+}
+.scoreboard-btn-container button:focus {
+    box-shadow: #ebdc99 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #e7d999 0 -3px 0 inset;
+}
+.scoreboard-btn-container button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #f1dbaa 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+  
+.scoreboard-btn-container button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
