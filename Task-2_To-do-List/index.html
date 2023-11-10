@@ -9,16 +9,17 @@
 <body>
     <main>
         <h1>To-Do<span> List</span></h1>
-    <form action="" autocomplete="on">
-        <input type="text" id="FirstName" placeholder="First Name">
-        <input type="text" id="lastName" placeholder="Last Name">
-        <input type="text" id="task" placeholder="Your Task">
-        <button class="addTask">Add Task</button>
-    </form>
-    <p class="errorMessage">All fields are required*</p>
-    <div class="scoreBoard-container">
+        <form action="" autocomplete="on">
+            <input type="text" id="FirstName" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+            <input type="text" id="task" placeholder="Your Task">
+            <button class="addTask">Add Task</button>
+        </form>
+        <p class="errorMessage">All fields are required*</p>
+        <div class="scoreBoard-container">
         
-    </div>
+        </div>
+        <button onclick="clearAll()" id="clearbtn">Clear All</button>
     </main>
     <script src="./script.js"></script>
 </body>

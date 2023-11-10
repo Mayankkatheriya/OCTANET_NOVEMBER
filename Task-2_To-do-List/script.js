@@ -1,3 +1,24 @@
+let scoreBoardContainer = document.querySelector(".scoreBoard-container");
+let data= [];
+if(localStorage.getItem("Tasks")){
+    data = JSON.parse(localStorage.getItem('Tasks'));
+    data.forEach(ele => {
+        let scoreBoardElement = document.createElement("div");
+        scoreBoardElement.classList.add("scoreboard");
+        scoreBoardElement.innerHTML = `
+        <div>
+        <p class = "playerName"> ${ele.name}</p>
+        <p class="main-time">${ele.time}</p>
+        </div>
+        <p class="player-task">Task: ${ele.task}</p>
+        <div class="scoreboard-btn-container">
+            <button>🗑️</button>
+        </div>
+        `;
+        scoreBoardContainer.appendChild(scoreBoardElement);
+        activateButton()
+    });
+}
 document.querySelector("form").addEventListener("submit", (e)=>{
     e.preventDefault();
     let firstName = e.target.children[0].value;
@@ -9,7 +30,6 @@ document.querySelector("form").addEventListener("submit", (e)=>{
         errorMessage.style.display = "block"
     }
     else{
-        let scoreBoardContainer = document.querySelector(".scoreBoard-container");
         let scoreBoardElement = document.createElement("div");
         scoreBoardElement.classList.add("scoreboard");
 
@@ -35,15 +55,24 @@ document.querySelector("form").addEventListener("submit", (e)=>{
         <p class = "playerName"> ${firstName} ${lastName}</p>
         <p class="main-time">${date}, ${time}</p>
         </div>
-        <p class="player-task">${task}</p>
+        <p class="player-task">Task: ${task}</p>
         <div class="scoreboard-btn-container">
             <button>🗑️</button>
         </div>
         `;
+        let obj = {
+            name : `${firstName} ${lastName}`,
+            time: `${date}, ${time}`,
+            task: `${task}`
+        }
+        data.push(obj);
+        localStorage.setItem('Tasks', JSON.stringify(data));
+
         scoreBoardContainer.appendChild(scoreBoardElement);
-        
+        e.target.children[0].value = ""
+        e.target.children[1].value = ""
+        e.target.children[2].value = ""
         activateButton()
-        // sortAndAppend();
     }
 })
 //TODO Activate buttons
@@ -55,21 +84,6 @@ function activate(e) {
     if (btnTarget === "🗑️") {
         e.target.parentElement.parentElement.remove();
     }
-    // else if(btnTarget==="+5"){
-    //     scores.style.transform = "scale(1.5)"
-    //     setTimeout(()=>{
-    //         scores.style.transform = "scale(1)"
-    //     },100)
-    //     scores.innerText = parseInt(scores.innerText)+5    
-    // }
-    // else if(btnTarget==="-5"){
-    //     scores.style.transform = "scale(1.5)"
-    //     setTimeout(()=>{
-    //         scores.style.transform = "scale(1)"
-    //     },100)
-    //     scores.innerText = parseInt(scores.innerText)-5    
-    // }
-    // sortAndAppend();
 }
 //! call back function in click event should be global otherwise it will give error
 function activateButton() {
@@ -79,29 +93,7 @@ function activateButton() {
         el.addEventListener("click", activate);
     });
 }
-
-//TODO sort and reappend all elements
-// function sortAndAppend() {
-//     let scoreBoardContainer = document.querySelector(".scoreBoard-container");
-//     let data = [...document.querySelectorAll(".scoreboard")];
-
-//     //* sort the data array based on the player's score
-
-//     data.sort((a, b) => {
-//         return parseInt(b.querySelector(".player-score").textContent) - parseInt(a.querySelector(".player-score").textContent);
-//     });
-
-//     //* clear the existing elements
-
-//     while (scoreBoardContainer.firstChild) {
-//         scoreBoardContainer.removeChild(scoreBoardContainer.firstChild);
-//     }
-
-//     //* append the sorted elements back to the container
-
-//     data.forEach((element) => {
-//         scoreBoardContainer.appendChild(element);
-//     });
-// }
-// sortAndAppend();
-// activateButton();
+function clearAll() {
+    localStorage.clear()
+    location.reload()
+}
