@@ -2,6 +2,7 @@
 
 ## Table of Content
 1. [Landing Page](#Landing-Page) --> [Demo](https://mayankkatheriya.github.io/OCTANET_NOVEMBER/Task-1_Landing-Page/)
+2. [To-Do List](#Todo-list) --> [Demo](https://mayankkatheriya.github.io/OCTANET_NOVEMBER/Task-2_To-do-List/)
 
 
 ---
