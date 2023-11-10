@@ -40,3 +40,13 @@
 * CSS for a form section with input fields, labels, and buttons.
 * The "black-sec" section with multiple cards containing images, headings, and paragraphs.
 * Finally, there's styling for the footer, including logos, headings, and lists.
+
+  ---
+
+# Todo-list:
+
+## UI: [Demo](https://mayankkatheriya.github.io/OCTANET_NOVEMBER/Task-2_To-do-List/)
+![image](https://github.com/Mayankkatheriya/OCTANET_NOVEMBER/assets/128832286/bfb2c193-6987-47a1-81f9-a8ec6c6fbcc8)
+
+---
+## Explanation:
